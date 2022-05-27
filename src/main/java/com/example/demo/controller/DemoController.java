@@ -65,7 +65,7 @@ public class DemoController {
 			//l'errore mi sembrava tornasse solo come stringa e non formattata quindi l'unico modo che ho trovato per riconoscere se arriva l'errore previsto è stato controllare nel messaggio se c'è il codice
 			if (msg.contains("API000")) {
 				resp = new ResponseEntity<>(new BonificoResponse("API000","Errore tecnico  La condizione BP049 non e' prevista per il conto id 14537780.",null), HttpStatus.BAD_REQUEST);
-			}else {				
+			}else {
 				resp = new ResponseEntity<>(null, HttpStatus.SERVICE_UNAVAILABLE);
 			}
 		}

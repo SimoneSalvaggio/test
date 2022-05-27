@@ -21,7 +21,7 @@ import com.example.demo.model.TransactionList;
 import com.example.demo.model.entity.TransactionRequestHistory;
 import com.example.demo.model.response.BonificoResponse;
 import com.example.demo.model.response.SaldoResponse;
-import com.example.demo.model.response.TransactionResponse;
+import com.example.demo.model.response.TransazioniResponse;
 import com.example.demo.repository.TransactionRequestHistoryRepository;
 
 @Service
@@ -71,7 +71,7 @@ public class DemoService {
 		headers.add("apikey", apikey);
 		headers.add("auth-schema", authSchema);
 		HttpEntity <String> entity = new HttpEntity<String>(headers);
-		TransactionList list = (TransactionList) restTemplate.exchange(UriComponentsBuilder.fromHttpUrl(url).queryParam("toAccountingDate", toAccountingDate).queryParam("fromAccountingDate", fromAccountingDate).build().toUriString(), HttpMethod.GET, entity, TransactionResponse.class).getBody().getPayload();
+		TransactionList list = (TransactionList) restTemplate.exchange(UriComponentsBuilder.fromHttpUrl(url).queryParam("toAccountingDate", toAccountingDate).queryParam("fromAccountingDate", fromAccountingDate).build().toUriString(), HttpMethod.GET, entity, TransazioniResponse.class).getBody().getPayload();
 		TransactionRequestHistory transactionRequestHistory = new TransactionRequestHistory();
 		transactionRequestHistory.setRequestDate(new Date());
 		transactionRequestHistory.setDateFrom(fromAccountingDate);
