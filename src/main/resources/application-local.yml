@@ -1,0 +1,14 @@
+# App variable - local
+app:
+  var:
+    context-path: /fabrick
+    database-name: fabrick
+    database-host: localhost
+    database-port: 3306
+    database-params: "&serverTimezone=UTC&useLegacyDatetimeCode=false&allowPublicKeyRetrieval=true"
+    database-username: root
+    database-password: X941io83
+    server-port: 8080
+    ddl-auto: true
+#    ssl-enabled: false
+    
